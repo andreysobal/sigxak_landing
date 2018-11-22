@@ -1,6 +1,7 @@
 /node_modules/
 /vendor/
-/app/libs/
+/app/components/
+/app/libruaries/
 /app/css/
 /app/scripts/
 /app/images/
