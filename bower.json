@@ -1,5 +1,5 @@
 {
-  "name": "landing_page",
+  "name": "landing_init",
   "dependencies": {
     "jquery": "^3.3.1",
     "bootstrap": "^4.1.3",

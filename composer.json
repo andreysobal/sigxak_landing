@@ -1,6 +1,6 @@
 {
-    "name": "sobol/support",
-    "description": "Support form",
+    "name": "landing_init",
+    "description": "Start HTML Template",
     "type": "project",
     "require": {
         "phpmailer/phpmailer": "^6.0"
