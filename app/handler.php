@@ -10,6 +10,7 @@ if ($remote_referer_arr['host'] != $remote_referer_arr['host']) die;
 require_once 'config.php';
 
 $email         	= (isset($_POST['email'])) ? htmlspecialchars(stripslashes($_POST['email']), ENT_QUOTES, "UTF-8") : 'не указан';
+$name         = (isset($_POST['name'])) ? htmlspecialchars(stripslashes($_POST['name']), ENT_QUOTES, "UTF-8") : 'не указано';
 $number         = (isset($_POST['number'])) ? htmlspecialchars(stripslashes($_POST['number']), ENT_QUOTES, "UTF-8") : 'не указан';
 $message 				= (isset($_POST['message'])) ? htmlspecialchars(stripslashes($_POST['message']), ENT_QUOTES, "UTF-8") : '';
 
@@ -27,6 +28,7 @@ if (isset($_POST['siteurl'])) $_POST['siteurl'] = htmlspecialchars(stripslashes(
 
 $message = nl2br($message);
 
+$text .= '<b>Имя клиента:</b> ' . $name . "<br>" . PHP_EOL;
 $text .= '<b>Email клиента:</b> ' . $email . "<br>" . PHP_EOL;
 $text .= '<b>Телефон клиента:</b> ' . $number . "<br>" . PHP_EOL;
 if (!!$message) {$text .= '<b>Заданный вопрос:</b> ' . $message . "<br><br>" . PHP_EOL;}

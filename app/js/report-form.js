@@ -17,6 +17,7 @@ $(document).ready(function(){
         let errstr = '';
         let form = event.currentTarget,
             mailField = form.querySelector('.rep-form .email'),
+            nameField = form.querySelector('.rep-form .name'),
             telField = form.querySelector('.rep-form .tel'),
             msgField = form.querySelector('.rep-form #message_text'),
             textareas = [];
@@ -44,6 +45,15 @@ $(document).ready(function(){
                 if (errstr.length > 0) errstr += '\n';
                 errstr += 'Поле "Ваш e-mail" должно содержать правильный адрес электронной почты.' + ' ';
                 mailField.classList.add('error-field');
+            }
+        };
+
+        if (contains(form, nameField)) {
+            textareas.push(nameField);
+            if (nameField.value.length < 5) {
+                if (errstr.length > 0) errstr += '\n';
+                errstr +='Поле с именем должно содержать минимум 5 символов.';
+                nameField.classList.add('error-field');
             }
         };
 
@@ -117,6 +127,7 @@ $(document).ready(function(){
                             if (!!telField) telField.value = '';
                             if (!!mailField) mailField.value = '';
                             if (!!msgField) msgField.value = '';
+                            if (!!nameField) nameField.value = '';
                         }
                     }, 500);
                 }
