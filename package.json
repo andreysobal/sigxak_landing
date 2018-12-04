@@ -26,7 +26,10 @@
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.1",
     "gulp-util": "^3.0.8",
-    "run-sequence": "^2.2.1"
+    "run-sequence": "^2.2.1",
+    "gulp-cache": "^0.4.6",
+    "gulp-imagemin": "^3.3.0",
+    "imagemin-pngquant": "^5.0.1"
   },
   "dependencies": {}
 }

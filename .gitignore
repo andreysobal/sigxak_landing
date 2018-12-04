@@ -2,6 +2,7 @@
 /vendor/
 /app/components/
 /app/libruaries/
+/app/lib/
 /app/css/
 /app/scripts/
 /app/images/
