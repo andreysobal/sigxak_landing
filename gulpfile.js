@@ -97,7 +97,7 @@ gulp.task('img', function() {
         .pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('clean', del.bind(null, ['app/css', 'app/scripts', 'app/img', 'app/lib', 'dist']));
+gulp.task('clean', del.bind(null, ['app/css', 'app/scripts', 'app/lib', 'dist']));
 gulp.task('extras', () => {
   return gulp.src([
     'app/**/*.*',
