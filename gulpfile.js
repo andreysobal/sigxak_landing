@@ -42,10 +42,10 @@ gulp.task('styles', function() {
 
 gulp.task('components_style', function() {
 	return gulp.src([
-		'app/components/animate.css/animate.min.css',
-		'app/components/swiper/dist/css/swiper.min.css',
-		'app/components/bootstrap/dist/css/bootstrap-reboot.min.css',
-		'app/components/bootstrap/dist/css/bootstrap-grid.min.css',
+		'node_modules/animate.css/animate.min.css',
+		'node_modules/swiper/dist/css/swiper.min.css',
+		'node_modules/bootstrap/dist/css/bootstrap-reboot.min.css',
+		'node_modules/bootstrap/dist/css/bootstrap-grid.min.css',
 		])
 	.pipe(concatCss('components.css'))
 	.pipe(rename({ suffix: '.min', prefix : '' }))
@@ -71,10 +71,10 @@ gulp.task('js', function() {
 
 gulp.task('components_script', function() {
 	return gulp.src([
-		'app/components/jquery/dist/jquery.min.js',
-		'app/components/jquery-form/dist/jquery.form.min.js',
-		'app/components/wow/dist/wow.min.js',
-		'app/components/swiper/dist/js/swiper.min.js'
+		'node_modules/jquery/dist/jquery.min.js',
+		'node_modules/jquery-form/dist/jquery.form.min.js',
+		'node_modules/wow/dist/wow.min.js',
+		'node_modules/swiper/dist/js/swiper.min.js'
 		])
 	.pipe(concat('components.min.js'))
 	.pipe(gulp.dest('app/scripts/'))
