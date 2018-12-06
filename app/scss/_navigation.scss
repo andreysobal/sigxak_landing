@@ -1,0 +1,33 @@
+nav {
+	position: relative; width: 100%; height: auto;
+	background: $bg_green_dark;
+	.nav {
+		display: flex; flex-direction: column; justify-content: center; align-items: center;
+		.nav_item {}
+	}
+}
+
+/*adaptivity*/
+	/*mobile*/
+	@media only screen and (min-width: $sm) {
+	}
+	/*tablets*/
+	@media only screen and (min-width: $md) {
+	}
+	/*desktop or tablets in landscape*/
+	@media only screen and (min-width: $lg) {
+		nav {
+			.nav {
+				height: 3.87rem;
+				flex-direction: row;
+			}
+		}
+	}
+
+	/*wideview monitor*/
+	@media only screen and (min-width: $xl) {
+	}
+	/*supperwide view monitor*/
+	@media only screen and (min-width: $xxl) {
+		
+	}
