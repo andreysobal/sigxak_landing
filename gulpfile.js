@@ -44,7 +44,7 @@ gulp.task('components_style', function() {
 	return gulp.src([
 		'node_modules/animate.css/animate.min.css',
 		'node_modules/swiper/dist/css/swiper.min.css',
-		'node_modules/bootstrap/dist/css/bootstrap-reboot.min.css',
+		// 'node_modules/bootstrap/dist/css/bootstrap-reboot.min.css',
 		'node_modules/bootstrap/dist/css/bootstrap-grid.min.css',
 		])
 	.pipe(concatCss('components.css'))
@@ -115,7 +115,7 @@ gulp.task('extras', () => {
 
 gulp.task('watch', ['styles', 'components_style', 'js', 'components_script', 'phpmailer', 'browser-sync'], function() {
 	gulp.watch('app/'+syntax+'/**/*.'+syntax+'', ['styles']);
-	gulp.watch(['components/**/*.js', 'app/js/common.js'], ['js']);
+	gulp.watch(['app/**/*.js', 'app/js/common.js'], ['js']);
 	gulp.watch('app/*.html', browserSync.reload)
 });
 

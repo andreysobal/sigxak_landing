@@ -1,10 +1,76 @@
 nav {
-	position: relative; width: 100%; height: auto;
-	background: $bg_green_dark;
+	position: -webkit-sticky;
+	position: sticky; 
+	width: 100%; height: auto; min-height: 2.87rem; padding-top: 0.45rem;
+	background-color: $bg_green_dark;
+	display: flex; flex-direction: column; justify-content: center; align-items: center;
 	.nav {
-		display: flex; flex-direction: column; justify-content: center; align-items: center;
-		.nav_item {}
+		display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 0;
+		.nav__item {list-style: none;}
 	}
+}
+.nav__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: inherit;
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  visibility: hidden;
+  transition-property: visibility, height, line-height, font-size;
+  transition-timing-function: linear;
+  transition: 1s;
+}
+.nav__wrapper.open {
+  height: 9rem;
+  font-size: $h3;
+  line-height: 1.25;
+  visibility: visible;
+}
+
+/*burger-button animated styles*/
+.icon {
+  position: absolute; top: 0.45rem; right: 0.45rem;
+  width: 2.4rem;
+  height: calc(1.8rem + 4px);
+  z-index: 111;
+}
+.icon__item {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  left: 0;
+  transition: 0.6s;
+  background-color: $bg_white;
+}
+.icon .one {
+  top: 0px;
+}
+.icon .two, .icon .three {
+  top: calc(0.9rem);
+}
+.icon .four {
+  top: 1.8rem;
+}
+
+.icon.open .one, .icon.open .four {
+  display: none;
+}
+.icon.open .two {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+} 
+.icon.open .three {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 /*adaptivity*/
@@ -17,10 +83,31 @@ nav {
 	/*desktop or tablets in landscape*/
 	@media only screen and (min-width: $lg) {
 		nav {
+			height: 3.87rem;
 			.nav {
-				height: 3.87rem;
 				flex-direction: row;
+				.nav__item:after {
+					content: " // ";
+					display: inline-block;
+					width: auto; height: auto;
+					position: relative;
+					padding: 0 1rem;
+				}
+				.nav__item:last-child:after {content: ""; width: 0; height: 0;}
 			}
+		}
+		.icon {display: none;}
+		.nav__wrapper {
+			position: relative;
+			top: auto;
+			left: auto;
+			right: auto;
+			width: 100%;
+			height: auto;
+			padding: 0;
+			visibility: visible;
+			font-size: $h3;
+			line-height: 1.25;
 		}
 	}
 
