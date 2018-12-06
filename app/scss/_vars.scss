@@ -1,11 +1,59 @@
-$default-font: "roboto-example", sans-serif;
+/*fonts*/
+$default-font: "roboto-example", Arial, Helvetica, sans-serif;
+$content-font: "openSans", Arial, Helvetica, sans-serif;
+
+/*scrren breakpoints*/
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1640px;
+$xxl: 1920px;
+
+/*text colors*/
+$text_white: #fff;
+$text_black: #000033;
+$text_green: #009999;
+
+/*font sizes*/
+$h1: 6.96rem;
+$h2: 0.44 * $h1;
+$h3: 1.125 * $text_medium;
+$text_medium: 0.148 * $h1;
+$text_low: 0.875 * $text_medium;
+
+/*bg colors*/
+$bg_green-dark: #009999;
+$bg_green-light: #ccffff;
+$bg_white: #fff;
+$bg_black: #000033;
+
+/*main colors*/
+$error: rgba(255,0,0,0.8);
+$inactive: rgba(232,97,106,0.55);
 $accent: orange;
-$text: #333;
 
-// Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
-$grid-gutter-width: 30px;
-$grid-columns: 12;
-$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
-$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px);
+/*adaptivity*/
+	/*mobile*/
+	@media only screen and (min-width: $sm) {
+		
+	}
+	/*tablets*/
+	@media only screen and (min-width: $md) {
+		
+	}
+	/*desktop or tablets in landscape*/
+	@media only screen and (min-width: $lg) {
 
-$gutter: $grid-gutter-width;
+	}
+
+	/*wideview monitor*/
+	@media only screen and (min-width: $xl) {
+		
+	}
+	/*supperwide view monitor*/
+	@media only screen and (min-width: $xxl) {
+		
+	}
+
+
