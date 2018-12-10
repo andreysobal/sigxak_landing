@@ -18,6 +18,7 @@ section {
 .user__wrapper {padding-bottom: 1rem;}
 .user {
 	border: 2px solid transparent;
+	transition: 0.7s ease-out 0.01s;
 	.user__img {width: 100%; height: 18.065rem; background: url(/img/about_1.jpg) 50% 0 no-repeat; background-size: auto 100%;}
 	.user__text {
 		padding: 1.5rem 0;
@@ -46,7 +47,7 @@ section {
 	border: 2px solid $bg_green-dark;
 	color: $text_white;
 	background-color: $bg_green-dark;
-	.descr {opacity: 1;}
+	.user__text .descr {opacity: 1;}
 }
 
 /*adaptivity*/
@@ -63,7 +64,7 @@ section {
 		.about__content > div> div:first-child > p {padding-left: 0; padding-right: 2.5rem;}
 		.about__users {width: 100%;}
 		.user__wrapper {padding-bottom: 0;}
-		.user .descr {opacity: 0;}
+		.user .user__text 	.descr {opacity: 0;}
 		.user .user__img {background-size: 100% auto;}
 	}
 	/*wideview monitor*/
