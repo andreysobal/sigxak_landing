@@ -17,6 +17,7 @@ section {
 .about__users {width: 60%; margin: auto;}
 .user__wrapper {padding-bottom: 1rem;}
 .user {
+	padding-bottom: 1.5rem;
 	border: 2px solid transparent;
 	transition: 0.7s ease-out 0.01s;
 	.user__img {width: 100%; height: 18.065rem; background: url(/img/about_1.jpg) 50% 0 no-repeat; background-size: auto 100%;}
@@ -41,13 +42,20 @@ section {
 .user_3 .user__img {background-image: url(/img/about_3.jpg);}
 .user_4 .user__img {background-image: url(/img/about_4.jpg);}
 .user .user__socials {
-	position: relative; width: 80%; height: 2rem; margin: auto;
+	position: relative; width: 50%; height: 2rem; margin: auto;
+	display: flex; flex-direction: row; justify-content: space-between; align-items: center;
+	& > div {width: 20%; height: 100%;}
+	a {display: block; width: 100%; height: 100%; text-decoration: none; color: transparent;}
+	i {width: 100%; height: 100%; font-size: 1.4em;}
 }
 .user.active {
 	border: 2px solid $bg_green-dark;
 	color: $text_white;
 	background-color: $bg_green-dark;
 	.user__text .descr {opacity: 1;}
+	.user__socials {
+		a {color: $text_white;}
+	}
 }
 
 /*adaptivity*/

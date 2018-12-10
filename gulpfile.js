@@ -46,6 +46,7 @@ gulp.task('components_style', function() {
 		'node_modules/swiper/dist/css/swiper.min.css',
 		// 'node_modules/bootstrap/dist/css/bootstrap-reboot.min.css',
 		'node_modules/bootstrap/dist/css/bootstrap-grid.min.css',
+		'node_modules/@fortawesome/fontawesome-free/css/all.min.css'
 		])
 	.pipe(concatCss('components.css'))
 	.pipe(rename({ suffix: '.min', prefix : '' }))
@@ -74,7 +75,8 @@ gulp.task('components_script', function() {
 		'node_modules/jquery/dist/jquery.min.js',
 		'node_modules/jquery-form/dist/jquery.form.min.js',
 		'node_modules/wow/dist/wow.min.js',
-		'node_modules/swiper/dist/js/swiper.min.js'
+		'node_modules/swiper/dist/js/swiper.min.js',
+		'node_modules/@fortawesome/fontawesome-free/js/all.min.js'
 		])
 	.pipe(concat('components.min.js'))
 	.pipe(gulp.dest('app/scripts/'))
@@ -84,6 +86,10 @@ gulp.task('components_script', function() {
 gulp.task('phpmailer', () => {
     return gulp.src('vendor/phpmailer/phpmailer/src/**')
         .pipe(gulp.dest('app/lib/phpmailer/src/'));
+});
+gulp.task('fontawesome', () => {
+    return gulp.src('node_modules/@fortawesome/fontawesome-free/webfonts/**')
+        .pipe(gulp.dest('app/@fortawesome/fontawesome-free/webfonts/'));
 });
 
 gulp.task('img', function() {
@@ -97,7 +103,7 @@ gulp.task('img', function() {
         .pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('clean', del.bind(null, ['app/css', 'app/scripts', 'app/lib', 'dist']));
+gulp.task('clean', del.bind(null, ['app/css', 'app/scripts', 'app/lib', 'app/@fortawesome', 'dist']));
 gulp.task('extras', () => {
   return gulp.src([
     'app/**/*.*',
@@ -113,7 +119,7 @@ gulp.task('extras', () => {
   }).pipe(gulp.dest('dist'));
 });
 
-gulp.task('watch', ['styles', 'components_style', 'js', 'components_script', 'phpmailer', 'browser-sync'], function() {
+gulp.task('watch', ['styles', 'components_style', 'js', 'components_script', 'phpmailer', 'fontawesome', 'browser-sync'], function() {
 	gulp.watch('app/'+syntax+'/**/*.'+syntax+'', ['styles']);
 	gulp.watch(['app/**/*.js', 'app/js/common.js'], ['js']);
 	gulp.watch('app/*.html', browserSync.reload)
@@ -123,6 +129,6 @@ gulp.task('default', ['watch']);
 
 gulp.task('build', () => {
   return new Promise(resolve => {
-    runSequence(['clean'], ['styles', 'components_style', 'js', 'components_script', 'img', 'phpmailer'], ['extras'], resolve);
+    runSequence(['clean'], ['styles', 'components_style', 'js', 'components_script', 'img', 'phpmailer', 'fontawesome'], ['extras'], resolve);
   });
 });
