@@ -1,0 +1,76 @@
+section {
+	background-color: $bg_green-light;
+	padding: 5.5rem 0 10.97rem;
+	h2:after {
+		content: "˙˙˙";
+		display: block;
+		width: auto; height: auto;
+		position: relative;
+		line-height: 1em;
+		font-weight: 800;
+	}
+}
+.about__content {
+	padding: 1.2rem 2rem 3.5rem;
+	p {font-size: $text_low; line-height: 2; padding-top: 1.5rem; padding-right: 0;}
+}
+.about__users {width: 60%; margin: auto;}
+.user__wrapper {padding-bottom: 1rem;}
+.user {
+	border: 2px solid transparent;
+	.user__img {width: 100%; height: 18.065rem; background: url(/img/about_1.jpg) 50% 0 no-repeat; background-size: auto 100%;}
+	.user__text {
+		padding: 1.5rem 0;
+		font-size: $text_medium;
+		& > * {margin: auto;} 
+		h3.name {width: 94%; padding: 0;}
+		h3.name:before,
+		h3.name:after {
+			content: "//";
+			display: inline;
+			width: auto; height: auto;
+			position: relative;
+			padding: 0 0.6rem;
+		}
+		.prof {width: 94%; padding: 1.5rem 0;}
+		.descr {width: 90%; opacity: 0.1; line-height: 1.5;}
+	}
+}
+.user_2 .user__img {background-image: url(/img/about_2.jpg);}
+.user_3 .user__img {background-image: url(/img/about_3.jpg);}
+.user_4 .user__img {background-image: url(/img/about_4.jpg);}
+.user .user__socials {
+	position: relative; width: 80%; height: 2rem; margin: auto;
+}
+.user.active {
+	border: 2px solid $bg_green-dark;
+	color: $text_white;
+	background-color: $bg_green-dark;
+	.descr {opacity: 1;}
+}
+
+/*adaptivity*/
+	/*mobile*/
+	@media only screen and (min-width: $sm) {
+	}
+	/*tablets*/
+	@media only screen and (min-width: $md) {
+	}
+	/*desktop or tablets in landscape*/
+	@media only screen and (min-width: $lg) {
+		.about__content {padding: 3.226rem 2rem 6.77rem;}
+		.about__content p {padding-top: 0; padding-left: 2.5rem;}
+		.about__content > div> div:first-child > p {padding-left: 0; padding-right: 2.5rem;}
+		.about__users {width: 100%;}
+		.user__wrapper {padding-bottom: 0;}
+		.user .descr {opacity: 0;}
+		.user .user__img {background-size: 100% auto;}
+	}
+	/*wideview monitor*/
+	@media only screen and (min-width: $xl) {
+	}
+	/*supperwide view monitor*/
+	@media only screen and (min-width: $xxl) {
+		.section_1 > .wrapper {width: 1400px;}
+		.user__wrapper {padding: 0 1rem;}
+	}
