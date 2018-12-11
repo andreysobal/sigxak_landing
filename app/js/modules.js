@@ -57,3 +57,17 @@ function showModalWindow(bool){
 		window.scrollTo(0, keepBodyPosition);
 	}
 }
+
+/*
+swiper initialization
+*/
+var mySwiper = new Swiper ('.swiper-container', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  })

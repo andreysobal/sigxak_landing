@@ -1,6 +1,6 @@
 section {
 	background-color: $bg_green-light;
-	padding: 5.5rem 0 10.97rem;
+	padding: 5.5rem 0 2rem;
 	h2:after {
 		content: "˙˙˙";
 		display: block;
@@ -57,6 +57,67 @@ section {
 		a {color: $text_white;}
 	}
 }
+.portfolio_nav {
+	position: relative;
+	width: 100%; height: auto; margin: auto; padding: 2rem;
+	a:hover {color: $text_green;}
+}
+.slider {
+	position: relative; width: 100%; height: auto;
+	padding: 2rem;
+}
+.swiper-container {width: 100%; height: calc(20.64rem + 20px);}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {bottom: 0;}
+.slide {
+	width: 100%; height: 20.64rem; color: transparent;
+	background: url(../img/gallery_1.jpg) 50% 0 no-repeat; background-size: auto 100%;
+}
+.slide_2 {background-image: url(../img/gallery_2.jpg);}
+.slide_3 {background-image: url(../img/gallery_3.jpg);}
+.slide_4 {background-image: url(../img/gallery_4.jpg);}
+.slide_5 {background-image: url(../img/gallery_5.jpg);}
+.slide_6 {background-image: url(../img/gallery_6.jpg);}
+.slide_7 {background-image: url(../img/gallery_7.jpg);}
+.slide_8 {background-image: url(../img/gallery_8.jpg);}
+.swiper-pagination-bullet-active {background: $bg_green-dark;}
+.gallery {
+	position: relative; width: 100%; padding: 0; margin: auto; height: auto;
+	display: none; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center;
+}
+.slide_wrapper {
+	position: relative; width: 100%; height: 100%;
+	display: flex; flex-direction: column; justify-content: center; align-items: center;
+	color: $text_white; background-color: $bg_green-dark-opacity; opacity: 0;
+	transition: opacity 0.6s ease-out 0.01s;
+	.cross {width: 3rem; height: 3rem; background: url(../img/gallery_cross-move.png) 50% 50% no-repeat; background-size: cover; margin-top: 1.5rem;}
+}
+.slide:hover .slide_wrapper {opacity: 1;}
+
+.section_3 {background-color: $bg_white;}
+.features {
+	display: block; position: relative; width: 100%; height: auto;
+	padding-top: 3.5rem;
+	text-align: left;
+	.features__item {
+		padding: 0 1rem; padding-bottom: 3.5rem;
+		& > div {display: block; position: relative;}
+		.img {
+			display: block; width: 7.355rem; height: 7.355rem; 
+			background: url(../img/services_phone.png) 50% 50%; background-size: cover;
+		}
+		.title {
+			width: 100%;
+			padding: 1rem 0; margin: auto;
+			font-size: $h4; line-height: 1.25; font-weight: 400; letter-spacing: 1.5px;
+		}
+		.text {font-size: $text_low; line-height: 2;}
+		.link {text-align: right; font-size: $h3; line-height: 2; font-weight: 700; opacity: 1; transition: opacity 0.6s ease-out 0.01s; cursor: pointer;}
+	}
+	.features__wrapper {width: 100%; height: 100%; background-color: $bg_green-light; transition: background-color 0.6s ease-out 0.01s;}
+	.features__item_2 .img {background-image: url(../img/services_settings.png);}
+	.features__item_3 .img {background-image: url(../img/services_layout.png);}
+	.features__item_4 .img {background-image: url(../img/services_clock.png);}
+}
 
 /*adaptivity*/
 	/*mobile*/
@@ -67,6 +128,7 @@ section {
 	}
 	/*desktop or tablets in landscape*/
 	@media only screen and (min-width: $lg) {
+		section {padding: 6.71rem 0 5.87rem;}
 		.about__content {padding: 3.226rem 2rem 6.77rem;}
 		.about__content p {padding-top: 0; padding-left: 2.5rem;}
 		.about__content > div> div:first-child > p {padding-left: 0; padding-right: 2.5rem;}
@@ -74,6 +136,13 @@ section {
 		.user__wrapper {padding-bottom: 0;}
 		.user .user__text 	.descr {opacity: 0;}
 		.user .user__img {background-size: 100% auto;}
+		.slider {display: none;}
+		.slide {width: 25%; height: 17vw;}
+		.gallery {display: flex; padding-top: 3.35rem;}
+		.features .features__item .features__wrapper {background-color: transparent;}
+		.features .features__item .link {opacity: 0;}
+		.features .features__item:hover .features__wrapper {background-color: $bg_green-light;}
+		.features .features__item:hover .link {opacity: 1;}
 	}
 	/*wideview monitor*/
 	@media only screen and (min-width: $xl) {
@@ -81,5 +150,7 @@ section {
 	/*supperwide view monitor*/
 	@media only screen and (min-width: $xxl) {
 		.section_1 > .wrapper {width: 1400px;}
+		.section_3 > .wrapper {width: 1400px;}
 		.user__wrapper {padding: 0 1rem;}
+		.slide {height: 20.64rem;}
 	}

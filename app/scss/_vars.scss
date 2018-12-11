@@ -16,14 +16,16 @@ $text_black: #000033;
 $text_green: #009999;
 
 /*font sizes*/
-$h1: 6.96rem;
-$h2: 0.44 * $h1;
-$text_medium: 0.148 * $h1;
-$h3: 1.125 * $text_medium;
-$text_low: 0.875 * $text_medium;
+$h1: 6.96rem; 										/*108px*/
+$h2: 0.44 * $h1; 									/*48px*/
+$text_medium: 0.148 * $h1;				/*16px*/
+$h3: 1.125 * $text_medium;				/*18px*/
+$h4: 1.875 * $text_medium;				/*30px*/
+$text_low: 0.875 * $text_medium;	/*14px*/
 
 /*bg colors*/
 $bg_green-dark: #009999;
+$bg_green-dark-opacity: rgba(0,153,153,0.7);
 $bg_green-light: #ecfffc;
 $bg_white: #fff;
 $bg_black: #000033;
