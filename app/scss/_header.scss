@@ -16,7 +16,7 @@ header {
 	/*desktop or tablets in landscape*/
 	@media only screen and (min-width: $lg) {
 		header {
-			height: 64.19rem; 
+			height: 63.5rem;; 
 			background-image: url(../img/header_bg_med.jpg); background-size: auto 100%;
 		}
 	}
@@ -27,6 +27,10 @@ header {
 	/*supperwide view monitor*/
 	@media only screen and (min-width: $xxl) {
 		header {
-			background-image: url(../img/header_bg.jpg);
+			height: 63.5rem;
+			max-height: calc(100vh - 3.5rem); 
+			background-image: url(../img/header_bg.jpg); 
+			background-size: 100% auto;
+			background-position: 50% 0;
 		}
 	}

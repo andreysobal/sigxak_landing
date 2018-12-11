@@ -118,6 +118,45 @@ section {
 	.features__item_3 .img {background-image: url(../img/services_layout.png);}
 	.features__item_4 .img {background-image: url(../img/services_clock.png);}
 }
+.posts {
+	padding-top: 4.2rem;
+	.item__wrapper {position: relative; width: 100%; height: 100%; padding-bottom: 2rem;}
+	.posts__item {
+		position: relative; width: 100%; height: 100%;
+		background-color: $bg_white;
+		.img {
+			width: 100%; height: 100vw;
+			background: url(../img/blog_1.jpg) 50% 0 no-repeat; background-size: 100%;
+		}
+		.content {
+			position: relative; width: 100%; height: 23.225rem; padding: 1rem; overflow: visible;
+			text-align: left;
+			.content__wrapper {
+				display: flex; flex-direction: column; justify-content: space-between;
+				position: relative; width: 100%; height: 100%; overflow: hidden;
+			}
+			.subject {font-size: $text_medium; line-height: 1.3; font-weight: 400; color: $text_green;}
+			.title {font-size: $h4; line-height: 1.25; font-weight: 400; padding-bottom: 1rem; padding-top: 0.5rem;}
+			.text {
+				font-size: $text_medium; line-height: 1.5; font-weight: 400;
+			}
+			.text:after {
+			  content: '˙˙˙';
+			  display: block; width: auto; height: 1em; padding-left: 1rem; padding-right: 0.3rem;
+			  position: absolute; right: 0; bottom: -2px;
+			  background-image: linear-gradient(left, transparent, $bg_white 40%);
+			  font-size: 1.5em;
+			}
+		}
+	}
+}
+.posts .posts__item_2 .img {background-image: url(../img/blog_2.jpg);}
+.posts .posts__item_3 .img {background-image: url(../img/blog_3.jpg);}
+.posts .posts__item_4 .img {background-image: url(../img/blog_4.jpg);}
+.posts .posts__item_5 .img {background-image: url(../img/blog_5.jpg);}
+.posts .posts__item_6 .img {background-image: url(../img/blog_6.jpg);}
+.posts .posts__item_7 .img {background-image: url(../img/blog_7.jpg);}
+.posts .posts__item_8 .img {background-image: url(../img/blog_8.jpg);}
 
 /*adaptivity*/
 	/*mobile*/
@@ -143,14 +182,14 @@ section {
 		.features .features__item .link {opacity: 0;}
 		.features .features__item:hover .features__wrapper {background-color: $bg_green-light;}
 		.features .features__item:hover .link {opacity: 1;}
+		.posts .posts__item .img {height: 18rem; background-size: 100% auto;}
 	}
 	/*wideview monitor*/
 	@media only screen and (min-width: $xl) {
 	}
 	/*supperwide view monitor*/
 	@media only screen and (min-width: $xxl) {
-		.section_1 > .wrapper {width: 1400px;}
-		.section_3 > .wrapper {width: 1400px;}
+		section > .wrapper {width: 1400px;}
 		.user__wrapper {padding: 0 1rem;}
 		.slide {height: 20.64rem;}
 	}
