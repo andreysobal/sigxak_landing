@@ -46,7 +46,8 @@ gulp.task('components_style', function() {
 		'node_modules/swiper/dist/css/swiper.min.css',
 		// 'node_modules/bootstrap/dist/css/bootstrap-reboot.min.css',
 		'node_modules/bootstrap/dist/css/bootstrap-grid.min.css',
-		'node_modules/@fortawesome/fontawesome-free/css/all.min.css'
+		'node_modules/@fortawesome/fontawesome-free/css/all.min.css',
+		'node_modules/animate.css/animate.min.css'
 		])
 	.pipe(concatCss('components.css'))
 	.pipe(rename({ suffix: '.min', prefix : '' }))
@@ -76,6 +77,7 @@ gulp.task('components_script', function() {
 		'node_modules/jquery-form/dist/jquery.form.min.js',
 		'node_modules/wow/dist/wow.min.js',
 		'node_modules/swiper/dist/js/swiper.min.js',
+		"node_modules/wowjs/dist/wow.min.js",
 		'node_modules/@fortawesome/fontawesome-free/js/all.min.js'
 		])
 	.pipe(concat('components.min.js'))
