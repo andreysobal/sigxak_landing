@@ -17,7 +17,7 @@ function activate(event) {
 /*
 dots in blog section fade in when text is bigger then container
 */
-let textWrappers = document.querySelectorAll('.posts__item .content__wrapper');
+let textWrappers = document.querySelectorAll('.posts__item .content');
 
 Array.prototype.forEach.call(textWrappers, function(item, i, arr) {
 	hideDots(item);
@@ -25,8 +25,12 @@ Array.prototype.forEach.call(textWrappers, function(item, i, arr) {
 
 function hideDots(textWrapper) {
 	let textBox = textWrapper.getElementsByClassName('text'),
-			textBoxBottom = textBox[0].getBoundingClientRect().bottom,
-			wrapperBottom = textWrapper.getBoundingClientRect().bottom;
-	if (textBoxBottom <= wrapperBottom) textBox[0].classList.add('small');
+			textBoxBottom = textBox[0].offsetHeight + textBox[0].offsetTop,
+			wrapperBottom = textWrapper.offsetHeight;
+
+	console.log(textWrapper);
+	console.log(textBox[0]);
+	console.log(textBoxBottom + ' - text, wrapp - ' + wrapperBottom);
+	if (textBoxBottom > wrapperBottom) textBox[0].classList.add('bigger');
 	return false;
 }
