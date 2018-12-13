@@ -147,6 +147,7 @@ section {
 			  background-image: linear-gradient(left, transparent, $bg_white 40%);
 			  font-size: 1.5em;
 			}
+			.text.small:after {display: none;}
 		}
 	}
 }

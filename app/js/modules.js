@@ -76,4 +76,7 @@ wow.js initialization
 Reveal Animations When You Scroll.
 Easily customize animation settings: style, delay, length, offset, iterations
 */
-new WOW().init();
+let wow = new WOW({
+	mobile: false,
+})
+wow.init();
