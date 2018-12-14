@@ -1,0 +1,76 @@
+footer {
+	position: relative;
+	width: 100%; height: auto; margin: auto;
+	font-size: $text_low; line-height: 1.25;
+	div {padding: 2rem 0;}
+}
+.footer__nav {
+	display: none;
+	background-color: $bg_lime;
+}
+.footer__contacts {
+	background-color: $bg_green-dark;
+	.wrapper {
+		height: 21.613rem;
+		display: flex; flex-direction: row; justify-content: center; align-items: center; flex-wrap: wrap;
+		.addresses {
+			position: relative; width: 96%; height: auto;
+			display: flex; flex-direction: row; justify-content: space-between; align-items: center;
+			p {
+				max-width: 33%;
+				font-size: $h3; line-height: 1.5;
+			}
+		}
+		.social-media {
+			position: relative; width: 96%; height: auto;
+			display: flex; flex-direction: row; justify-content: center; align-items: center;
+			.social-media__item {
+				position: relative; width: 3.5rem; height: 3.5rem; border-radius: 50%; padding: 0; margin: 0; margin-left: 1rem;
+				background: url(../img/footer_socials.png) 0 50% no-repeat; background-size: auto 3.5rem;
+			}
+			.social-media__item_fb {background-position-x: -4.3rem;}
+			.social-media__item_twr {background-position-x: -8.8rem;}
+			.social-media__item_ln {background-position-x: -13.2rem;}
+			a {display: block; width: 100%; height: 3.5rem; white-space: nowrap; overflow: hidden; opacity: 0;}
+		}
+	}
+
+}
+.footer__info {
+	padding: 2rem;
+	background-color: $bg_black;
+	p {width: 100%; text-transform: uppercase; text-align: center;}
+	a {text-decoration: none; color: inherit;}
+	a:hover {color: $text_green;}
+}
+
+
+/*adaptivity*/
+	/*mobile*/
+	@media only screen and (min-width: $sm) {
+		
+	}
+	/*tablets*/
+	@media only screen and (min-width: $md) {
+		
+	}
+	/*desktop or tablets in landscape*/
+	@media only screen and (min-width: $lg) {
+		.footer__nav {
+			display: block;
+		}
+		.footer__contacts .wrapper {
+			justify-content: space-between;
+			.addresses {max-width: 50%;}
+			.social-media {width: 45%; padding-right: 5.5rem; justify-content: 	flex-end;}
+		}
+	}
+
+	/*wideview monitor*/
+	@media only screen and (min-width: $xl) {
+		
+	}
+	/*supperwide view monitor*/
+	@media only screen and (min-width: $xxl) {
+		footer .wrapper {width: 1400px;}
+	}
