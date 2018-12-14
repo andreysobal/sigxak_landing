@@ -31,3 +31,22 @@ function hideDots(textWrapper) {
 	if (textBoxBottom > wrapperBottom) textBox[0].classList.add('bigger');
 	return false;
 }
+/*
+transit ot blog posts
+*/
+let posts = document.getElementsByClassName('posts__item');
+
+Array.prototype.forEach.call(posts, function(item, i, arr) {
+	item.addEventListener( "click" , transit);
+	item.addEventListener( "touchstart" , transit);
+});
+
+function transit(event) {
+	let addr = event.currentTarget.getAttribute('data-addr');
+	let a = document.createElement('a');
+	a.style.display = 'none';
+	a.setAttribute('target', '_blank');
+	a.href = "./blog/" + addr + ".php";
+	a.href = "javascript:void(0)";
+	a.click();
+}
