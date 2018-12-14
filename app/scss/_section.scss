@@ -20,7 +20,7 @@ section {
 	padding-bottom: 1.5rem;
 	border: 2px solid transparent;
 	transition: 0.7s ease-out 0.01s;
-	.user__img {width: 100%; height: 18.065rem; background: url(/img/about_1.jpg) 50% 0 no-repeat; background-size: auto 100%;}
+	.user__img {width: 100%; height: 18.065rem; background: url(../img/about_1.jpg) 50% 0 no-repeat; background-size: auto 100%;}
 	.user__text {
 		padding: 1.5rem 0;
 		font-size: $text_medium;
@@ -38,9 +38,9 @@ section {
 		.descr {width: 90%; opacity: 0.1; line-height: 1.5;}
 	}
 }
-.user_2 .user__img {background-image: url(/img/about_2.jpg);}
-.user_3 .user__img {background-image: url(/img/about_3.jpg);}
-.user_4 .user__img {background-image: url(/img/about_4.jpg);}
+.user_2 .user__img {background-image: url(../img/about_2.jpg);}
+.user_3 .user__img {background-image: url(../img/about_3.jpg);}
+.user_4 .user__img {background-image: url(../img/about_4.jpg);}
 .user .user__socials {
 	position: relative; width: 50%; height: 2rem; margin: auto;
 	display: flex; flex-direction: row; justify-content: space-between; align-items: center;
