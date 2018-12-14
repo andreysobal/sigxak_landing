@@ -27,10 +27,7 @@ function hideDots(textWrapper) {
 	let textBox = textWrapper.getElementsByClassName('text'),
 			textBoxBottom = textBox[0].offsetHeight + textBox[0].offsetTop,
 			wrapperBottom = textWrapper.offsetHeight;
-
-	console.log(textWrapper);
-	console.log(textBox[0]);
-	console.log(textBoxBottom + ' - text, wrapp - ' + wrapperBottom);
+			
 	if (textBoxBottom > wrapperBottom) textBox[0].classList.add('bigger');
 	return false;
 }

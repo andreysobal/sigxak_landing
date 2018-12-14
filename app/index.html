@@ -408,12 +408,38 @@
 					</div>
 				</div>
 			</section>
-			<section class="section_5 contact" id="Contact"></section>
+			<section class="section_5 contact" id="Contact">
+				<div class="map"></div>
+				<div class="wrapper">
+					<h2 class="text_black">Contact us</h2>
+					<div class="form text_black">
+						<form action="handler.php" method="post" name="contact-form" class="rep-form" id="form" novalidate>
+							<div>
+								<input type="name" placeholder="Name" name="name" class="textarea name text_white" required>
+								<input type="email" id="email" placeholder="E-mail" name="email" class="textarea email text_white" required>
+							</div>
+							<textarea name="message" placeholder="Message" class="textarea  text_white" id="message_text" required wrap="soft"  cols="20" rows="6"></textarea>
+							<div class="button__wrapper">
+								<button type="submit" class="button text_black button_yellow" ><div class="button-wrapp"><span>SUBMIT</span></div></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
 		</main>
 		<footer></footer>
-
+	
 	</div>
-
+	<!-- Curtain for show progress of uploading information -->
+	<div class="ironCurtain">
+    <div class="progressBar">
+        <span id="progressStatus"><span>Загрузка</span></span>
+        <div class="container">
+          <div class="bar"></div>
+        </div>
+    </div>
+  </div>
+  
 	<script src="scripts/scripts.min.js"></script>
 
 </body>

@@ -108,6 +108,50 @@ input.textarea:-ms-input-placeholder {color: $inactive;}
 input.textarea::-ms-input-placeholder {color: $inactive;}
 input.textarea::placeholder {color: $inactive;}
 
+/*report's style module*/
+.ironCurtain {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 111;
+  opacity: 0.5;
+  overflow: auto;
+  right: 0px;
+  bottom: 0px;
+  margin: auto;
+}
+
+.progressBar {
+  display: none;
+  text-align: center;
+  z-index: 112;
+  padding-bottom: 1px;
+  position: absolute;
+  width: 270px;
+  height: 35px;
+  overflow: visible;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.progressBar .container {
+  width: 270px;
+  height: 3px;
+  margin: 5px auto 0 auto;
+}
+
+.progressBar .bar {
+  width: 100px;
+  height: 3px;
+  background: #fff;
+}
+
 /*adaptivity*/
 	/*mobile*/
 	@media only screen and (min-width: $sm) {

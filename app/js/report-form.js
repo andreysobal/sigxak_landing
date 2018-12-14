@@ -145,10 +145,19 @@ function _alert(message) {
 }
 
 function contains(parent, child) {
+    if (!parent || !child) {
+        return false;
+    }
     let children = parent.childNodes;
-    for (var i = children.length - 1; i >= 0; i--) {
-        if (child == children[i]) return true;
-
+    let i = children.length - 1;
+    while (i >= 0) {
+        if (child == children[i]) {
+            return true;
+        } else if (!!children[i].childNodes.length) {
+            contains(children[i], child);
+            return true;
+        }
+        i--;
     }
     return false;
 }
