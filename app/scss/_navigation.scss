@@ -1,11 +1,9 @@
 nav {
-	position: -webkit-sticky;
-	position: sticky; top: 0;
+	position: fixed; top: 0;
 	width: 100%; height: auto; min-height: 2.87rem; padding-top: 0.45rem;
 	background-color: $bg_green_dark;
 	display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 111;
 }
-nav.top {position: fixed; top: 0; left: 0; right: 0; opacity: 0.9;}
 .nav {
 	display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 0;
 	.nav__item {list-style: none;}
@@ -36,10 +34,10 @@ nav.top {position: fixed; top: 0; left: 0; right: 0; opacity: 0.9;}
   visibility: hidden;
   transition-property: visibility, height, line-height, font-size;
   transition-timing-function: linear;
-  transition: 1s;
+  transition: 0.6s;
 }
 .nav__wrapper.open {
-  height: 9rem;
+  height: 100vh;
   font-size: $h3;
   line-height: 1.25;
   visibility: visible;
@@ -92,8 +90,10 @@ nav.top {position: fixed; top: 0; left: 0; right: 0; opacity: 0.9;}
 	/*desktop or tablets in landscape*/
 	@media only screen and (min-width: $lg) {
 		nav {
+			position: relative; top: auto;
 			height: 3.87rem;
 		}
+		nav.top {position: fixed; top: 0; left: 0; right: 0; opacity: 0.9;}
 		.nav {
 			flex-direction: row;
 			.nav__item:after {

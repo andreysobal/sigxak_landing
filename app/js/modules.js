@@ -50,12 +50,8 @@ function showModalWindow(bool){
 	if (!!bool) {
 		modalEl.className = 'nav__wrapper open';
 		keepBodyPosition = window.pageYOffset;
-		document.body.classList.add('open');
-		document.body.style.top = '-' + keepBodyPosition + 'px';
 	} else {
 		modalEl.className = 'nav__wrapper';
-		document.body.classList.remove('open');
-		document.body.style.top = 0 + 'px';
 		window.scrollTo(0, keepBodyPosition);
 	}
 }

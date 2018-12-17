@@ -146,7 +146,7 @@ section {
 			  content: '˙˙˙';
 			  display: none; width: auto; height: 1em; padding-left: 1rem; padding-right: 0.3rem;
 			  position: absolute; right: 0; bottom: -2px;
-			  background-image: linear-gradient(left, transparent, $bg_white 40%);
+			  background-image: linear-gradient(to right, transparent, $bg_white 40%);
 			  font-size: 1.5em;
 			}
 			.text.bigger:after {display: block;}
