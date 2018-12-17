@@ -1,3 +1,6 @@
+/*
+report form validation and sending
+*/
 'use strict';
 
 $(document).ready(function(){
@@ -70,7 +73,7 @@ $(document).ready(function(){
 
             _alert(errstr);
         } else {
-            form.querySelector('h2').focus(); //change focus to some element to prevent keyboard visible state.
+            document.querySelector('form').focus(); //change focus to some element to prevent keyboard visible state.
 
             $('.ironCurtain').show();
             $('.progressBar').show();
@@ -82,13 +85,13 @@ $(document).ready(function(){
                     //centring again after keyboard slowly goes out
                     if (percentComplete < 99) {
                         if (!!position) {
-                            $('#progressStatus').html('Загружено' + ' <span id="pos">' + bytesToSize(position, 1) + '</span> ' + ' из '  +' <span id="total">' + bytesToSize(total, 1) + '</span>');
+                            $('#progressStatus').html('Downloaded ' + ' <span id="pos">' + bytesToSize(position, 1) + '</span> ' + ' from '  +' <span id="total">' + bytesToSize(total, 1) + '</span>');
                         } else {
-                            $('#progressStatus').html('Загрузка');
+                            $('#progressStatus').html('Downloading');
                         }
                     } else {
                         setTimeout(function() {
-                            $('#progressStatus').html( 'Почти загружено.' + '<br>' + 'Пожалуйста, подождите еще немного.');
+                            $('#progressStatus').html( 'Almost downloaded.' + '<br>' + 'Please wait a moment.');
                         }, 5000);
                     }
                     
@@ -100,12 +103,10 @@ $(document).ready(function(){
                 // success identifies the function to invoke when the server response
                 // has been received
                 error: function(xhr, textStatus, errorThrown) {
-                    $('.progressBar #pos').html('');
-                    $('.progressBar #total').html('');
                     $('.progressBar .bar').css('width', '10px');
                     $('.ironCurtain').hide();
                     $('.progressBar').hide();
-                    _alert('Проблемы при передаче сообщения. Попробуйте еще раз.');
+                    _alert('Problem during message transfer. Try one more time.');
                     console.log(textStatus);
                     console.log(xhr.responseText);
                     console.log(errorThrown);
@@ -121,9 +122,9 @@ $(document).ready(function(){
 
                         let mess_obj = data;
                         if (mess_obj.sent != 1 ||  data == '') {
-                            _alert('Пожалуйста, заполните все поля формы.');
+                            _alert('Please fill all the fields.');
                         } else {
-                            _alert('Сообщение отправлено.');
+                            _alert('Message send.');
                             if (!!telField) telField.value = '';
                             if (!!mailField) mailField.value = '';
                             if (!!msgField) msgField.value = '';
