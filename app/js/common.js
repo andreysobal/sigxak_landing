@@ -1,4 +1,33 @@
 /*
+make nav-bar stiky
+*/
+let nav = document.querySelector('nav'),
+		topId = 0,
+		topPosition = nav.offsetTop;
+
+function switchNavbar() {
+  let scrolled = window.pageYOffset || document.documentElement.scrollTop;
+  if (scrolled >= topPosition && topId == 0) {
+  	nav.classList = 'top';
+  	topId = 1;
+  } else if (scrolled < topPosition && topId == 1) {
+  	nav.classList = '';
+  	topId = 0;
+  }
+}
+
+window.onscroll = switchNavbar;
+window.onload = switchNavbar;
+
+/*Switch on smooth scroll to anchor*/
+let navLink = document.getElementsByClassName('nav__link');
+
+Array.prototype.forEach.call(navLink, function(item, i, arr) {
+	item.addEventListener( "click" , goFromMenu);
+	item.addEventListener( "touchstart" , goFromMenu);
+});
+
+/*
 effects when user description is touched
 */
 let users = document.getElementsByClassName('user');

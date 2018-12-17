@@ -17,15 +17,17 @@ document.querySelector('.icon').addEventListener('click', classToggle);
 document.querySelector('.icon').addEventListener('touch', classToggle);
 
 //close mobile menu choosing necessary point
+
 function goFromMenu(event) {
 	event.preventDefault();
 	var el = event.currentTarget;
 	var dir = el.getAttribute('href');
 
-	if (el.parentNode.parentNode.classList.contains('open')) {
+	if (el.parentNode.parentNode.parentNode.classList.contains('open')) {
 		showModalWindow(false);
 		document.querySelector('.icon').classList.remove('open');
 	}
+
 	//different behavior for anchors and external urls
 	if (dir.search('#') == 0) {
 		var id = dir,
