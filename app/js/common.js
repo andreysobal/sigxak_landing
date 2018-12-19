@@ -28,22 +28,6 @@ Array.prototype.forEach.call(navLink, function(item, i, arr) {
 });
 
 /*
-effects when user description is touched
-*/
-let users = document.getElementsByClassName('user');
-
-Array.prototype.forEach.call(users, function(item, i, arr) {
-	item.addEventListener( "click" , activate);
-	item.addEventListener( "touchstart" , activate);
-});
-
-function activate(event) {
-	let el = event.currentTarget;
-	let nowActive = document.querySelector('.active');
-	nowActive.classList.remove("active");
-	el.classList.add("active");
-}
-/*
 dots in blog section fade in when text is bigger then container
 */
 let textWrappers = document.querySelectorAll('.posts__item .content');
@@ -79,3 +63,57 @@ function transit(event) {
 	a.href = "javascript:void(0)";
 	a.click();
 }
+
+/*Users profiles*/
+let users = document.getElementsByClassName('user');
+
+/*
+Recievw random users from RandomAPI
+*/
+const numbRes = 4,
+			nat = 'us,es',
+			inc = 'name,picture';
+let accounts  = [],
+		urlParam = 'https://randomuser.me/api/?results=' + numbRes + '&nat=' + nat + '&inc=' + inc;
+
+$.ajax({
+  url: urlParam,
+  dataType: 'json',
+  success: function(data) {
+  	if (typeof(data) != 'object') {data = JSON.parse(data);}
+    console.log(data);
+    for (let i = 0; i < data.results.length; i++) {
+    	let user = {};
+    	user.name = data.results[i].name.first + ' ' + data.results[i].name.last;
+    	user.profession = data.results[i];
+    	user.img =  data.results[i].picture.large;
+    	accounts.push(user);
+    }
+    console.log(accounts);
+
+		if (!!accounts && !!users) {
+			
+			console.log();
+			accounts.forEach(function(item, i, arr) {
+				users[i].querySelector(".user__img").style.backgroundImage = 'url(' + item.img + ')';
+				console.log(item.name);
+				users[i].querySelector("h3").innerHTML = item.name;
+			})
+		}
+  }
+});
+/*
+effects when user description is touched
+*/
+Array.prototype.forEach.call(users, function(item, i, arr) {
+	item.addEventListener( "click" , activate);
+	item.addEventListener( "touchstart" , activate);
+});
+
+function activate(event) {
+	let el = event.currentTarget;
+	let nowActive = document.querySelector('.active');
+	nowActive.classList.remove("active");
+	el.classList.add("active");
+}
+
