@@ -78,3 +78,31 @@ let wow = new WOW({
 	mobile: false,
 })
 wow.init();
+
+/*
+	Google maps API
+	usage of google maps
+*/
+
+// let map = new google.maps.Map(document.getElementById('map'), {
+//   center: {lat: 10.011, lng: 76.427},
+//   zoom: 8,
+//   mapTypeId: 'terrain',
+//   gestureHandling: 'cooperative'
+// });
+
+/*
+	Yandex maps API
+	usage of yandex maps
+*/
+ymaps.ready(init);
+function init(){ 
+	// Создание карты.    
+	var myMap = new ymaps.Map("map", {
+		center: [9.957, 76.376],
+		controls: ['fullscreenControl', 'zoomControl'],
+		zoom: 13
+	});
+	myMap.setType('yandex#hybrid');
+	myMap.behaviors.disable('scrollZoom');
+}

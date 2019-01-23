@@ -25,6 +25,13 @@
 	<link rel="stylesheet" href="css/components.min.css">
 	<link rel="stylesheet" href="css/main.min.css">
 	<script src="scripts/components.min.js"></script>
+<!-- 
+	<script async defer
+	  src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+	</script>
+-->
+	
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=4de85ca5-9f20-4fcf-866d-68c05d1ca739&lang=en_US&l=sat"></script>
 </head>
 
 <body>
@@ -409,7 +416,9 @@
 				</div>
 			</section>
 			<section class="section_5 contact" id="Contact">
-				<div class="map"></div>
+				<div class="map" id="map">
+					
+				</div>
 				<div class="wrapper">
 					<h2 class="text_black">Contact us</h2>
 					<div class="form text_black">
@@ -474,6 +483,5 @@
   </div>
 
 	<script src="scripts/scripts.min.js"></script>
-
 </body>
 </html>
